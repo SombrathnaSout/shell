@@ -16,20 +16,16 @@ Singleton {
 
     readonly property url imagecache: `${cache}/imagecache`
 
-    function stringify(path: url): string {
-        return path.toString().replace(/%20/g, " ");
-    }
-
     function expandTilde(path: string): string {
-        return strip(path.replace("~", stringify(root.home)));
+        return strip(path.replace("~", root.home.toString()));
     }
 
     function shortenHome(path: string): string {
-        return path.replace(strip(root.home), "~");
+        return path.replace(strip(root.home.toString()), "~");
     }
 
     function strip(path: url): string {
-        return stringify(path).replace("file://", "");
+        return path.toString().replace("file://", "");
     }
 
     function mkdir(path: url): void {
