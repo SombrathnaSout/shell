@@ -6,9 +6,13 @@ import "modules/background"
 import "modules/areapicker"
 import "modules/lock"
 import Quickshell
+import "./services/"
+import "./modules/sidebarLeft/"
 
 ShellRoot {
     Background {}
+    property bool enableSidebarLeft: true
+    LazyLoader { active: enableSidebarLeft; component: SidebarLeft {} }
     Drawers {}
     AreaPicker {}
     Lock {}
