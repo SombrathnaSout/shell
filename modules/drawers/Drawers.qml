@@ -112,7 +112,7 @@ Variants {
                 property bool launcher
                 property bool dashboard
 
-                Component.onCompleted: Visibilities.screens[scope.modelData] = this
+                Component.onCompleted: Visibilities.screens[scope.modelData.name] = this
             }
 
             Interactions {

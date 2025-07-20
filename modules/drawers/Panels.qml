@@ -27,7 +27,7 @@ Item {
     anchors.margins: Config.border.thickness
     anchors.leftMargin: bar.implicitWidth
 
-    Component.onCompleted: Visibilities.panels[screen] = this
+    Component.onCompleted: Visibilities.panels[screen.name] = this
 
     Osd.Wrapper {
         id: osd
